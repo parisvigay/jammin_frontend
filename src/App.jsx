@@ -32,7 +32,7 @@ import CreateBand from './pages/createband/CreateBand';
         <Route path="/login" element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/my-bands" element={<MyBands />} />
-        <Route path="/my-bands/band" element={<Band />} />
+        <Route path="/my-bands/:bandId" element={<Band />} />
         <Route path="/my-bands/create" element={<CreateBand />} />
       </Routes>
       <Footer />

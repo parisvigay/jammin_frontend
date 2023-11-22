@@ -4,16 +4,15 @@ import { jwtDecode } from "jwt-decode";
 import Card from '@mui/joy/Card'
 import Button from '@mui/joy/Button';
 import Add from '@mui/icons-material/Add';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function MyBands() {
+    const [bands, setBands] = useState([])
     const navigate = useNavigate();
 
     function toCreateBand() {
         navigate('/my-bands/create');
     }
-
-    let bands;
 
     useEffect(() => {
         const getToken = () => {
@@ -31,7 +30,8 @@ export default function MyBands() {
         async function getBands() {
             try {
                 const response = await fetch(`http://localhost:8000/bands?id=${userId}`)
-                bands = await response.json();
+                const bands = await response.json();
+                setBands(bands)
             }
             catch (error){
                 console.error(error);
@@ -49,13 +49,13 @@ export default function MyBands() {
                     New band
                 </Button>
             <div className="bandCardContainer">
-                {bands.map(band => {
-                    <Link id="bandLink" style={{ textDecoration: 'none' }} to="/my-bands/band">
+                {bands.map((band, index) => (
+                    <Link id={`bandLink${index}`} style={{ textDecoration: 'none' }} to={`/my-bands/${band.id}`}>
                         <Card id="bandCard">
                             <p id="bandLink">{band.name}</p>
                         </Card>
                    </Link>
-                })}
+                ))}
             </div>
         </Card>
     </div>

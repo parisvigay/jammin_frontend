@@ -32,8 +32,9 @@
     /* align-items: center; */
 }
 
-.bandLabel {
+#bandLabel {
     font-family: Montserrat;
+    color: #302849;
 }
 
 #submitBandBtn {
