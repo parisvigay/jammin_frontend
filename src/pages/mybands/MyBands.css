@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+#myBandsMain {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#myBandsCard {
+    height: 64vmin;
+    width: 80vmin;
+    margin-top: 10vmin;
+    background-color: white;
+    box-shadow: 1vmin 1vmin #7a4747;
+    border: solid 0.25vmin #c7baaf;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bandCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vmin;
+    width: 25vmin;
+    padding: 0;
+}
+
+#bandCard:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+#bandLink {
+    font-size: 2vmin;
+    font-family: Montserrat;
+    color: #302849;
+}
+
+.bandCardContainer {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1vmin;
+}
+
+#myBandsH3 {
+    font-size: 2vmin;
+    font-family: Montserrat;
+    color: #302849;
+    margin: 0;
+}
+
+#createBandBtn {
+    font-size: 1.5vmin;
+    font-family: Montserrat;
+    background-color: #302849;
+    height: 3vmin;
+    width: 15vmin;
+    position: absolute;
+    top: 1vmin;
+    right: 1vmin;
+}
+
+#createBandBtn:hover {
+    background-color: #cfd7b6;
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}

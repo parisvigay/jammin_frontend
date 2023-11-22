@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap');
+
+.footerContainer {
+    width: 100vw;
+    height: 100%;
+    align-self: flex-end;
+    display: flex;
+    align-items: flex-end;
+}
+
+.footer {
+    width: 100vw;
+    height: 12vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footerLogo {
+    font-size: 2vmin;
+    color: #302849;
+    font-family: Anton;
+}
+
+.logoAndCopyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#footerCopyrightP {
+    font-size: 1.5vmin;
+    font-family: Montserrat;
+}
+
+#footerCopyright {
+    font-size: 1.5vmin;
+}

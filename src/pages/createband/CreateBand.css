@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.createBandMain {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#createBandCard {
+    height: 64vmin;
+    width: 80vmin;
+    margin-top: 10vmin;
+    padding: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1vmin 1vmin #7a4747;
+    border: solid 0.25vmin #c7baaf;
+}
+
+.bandForm {
+    height: 75%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* align-items: center; */
+}
+
+.bandLabel {
+    font-family: Montserrat;
+}
+
+#submitBandBtn {
+    font-size: 1.5vmin;
+    font-family: Montserrat;
+    background-color: #302849;
+    height: 3vmin;
+    width: 15vmin;
+}
+
+#submitBandBtn:hover {
+    background-color: #cfd7b6;
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+#createBandH3 {
+    font-size: 2vmin;
+    font-family: Montserrat;
+    color: #302849;
+    margin: 0;
+}
+
+#toMyBands {
+    position: absolute;
+    top: 1vmin;
+    left: 1vmin;
+    color: #302849;
+    font-size: 4vmin;
+}
+
+#toMyBands:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+    color: #cfd7b6;
+}
