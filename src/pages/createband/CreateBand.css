@@ -71,3 +71,24 @@
     transition: transform 0.2s ease;
     color: #cfd7b6;
 }
+
+.userSelect {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Montserrat;
+    color: #302849;
+    font-size: 1.5vmin;
+}
+
+#checbox > label {
+    font-family: Montserrat;
+    color: #302849;
+}
+
+.membersScroll {
+    overflow-y: auto;
+    max-height: 15vmin;
+    border-top: solid 0.1vmin #302849;
+    border-bottom: solid 0.1vmin #302849;
+}

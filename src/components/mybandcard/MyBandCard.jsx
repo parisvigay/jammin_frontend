@@ -1,8 +1,10 @@
 import Card from '@mui/joy/Card';
+import Button from '@mui/joy/Button';
+import Add from '@mui/icons-material/Add';
 import './MyBandCard.css';
 import BandInfoCard from '../bandinfocard/BandInfoCard';
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Divider from '@mui/material/Divider';
 
@@ -18,10 +20,19 @@ export default function MyBandCard() {
     const bandId = bandIdObj['bandId']
 
     const navigate = useNavigate();
+
     function toMyBands() {
         navigate('/my-bands')
     }
-    
+
+    function toCreateRehearsal() {
+        navigate(`/my-bands/${bandId}/create-rehearsal`)
+    }
+
+    function toCreateSong() {
+        navigate(`/my-bands/${bandId}/create-song`)
+    }
+
     useEffect(() => {
 
         async function getBand() {
@@ -34,12 +45,17 @@ export default function MyBandCard() {
                 console.error(error);
             }
             if (band) {
+                if (band.name) {
                 setBandName(band.name);
-                const memberNames = band.members.map(member => {
-                    const capitalized = member.username.charAt(0).toUpperCase() + member.username.slice(1);
-                    return capitalized;
-                });
-                setBandMembers(memberNames)
+                }
+                if (band.members) {
+                    const memberNames = band.members.map(member => {
+                        const capitalized = member.username && member.username.charAt(0).toUpperCase() + member.username.slice(1);
+                        return capitalized;            
+                    });
+                    setBandMembers(memberNames)
+            }
+
                 setBandYear(band.year_formed)
                 setBandDescription(band.description)
             }
@@ -104,12 +120,30 @@ export default function MyBandCard() {
                 <div className="songsOrRehearsalsContainer">
                     {bandRehearsals && bandRehearsals.map((rehearsal, index) => (
                     <div key={index}>
-                        <p className="songOrRehearsal">{rehearsal.date}</p>
+                        <Link style={{ textDecoration: 'none' }} to={`/my-bands/${bandId}/rehearsal/${rehearsal.id}`} className="songOrRehearsal">{rehearsal.date}</Link>
                         {index !== bandRehearsals.length - 1 && <Divider variant="middle" id="divider" />}
                     </div>
                 ))}
                 </div>
             </BandInfoCard>
+        </div>
+        <div className="btnContainer">
+            <Button 
+                id="createSongOrRehearsal" 
+                variant="solid" 
+                startDecorator={<Add />}
+                onClick={toCreateSong}
+            >
+                Song
+            </Button>
+            <Button 
+                id="createSongOrRehearsal" 
+                variant="solid" 
+                startDecorator={<Add />}
+                onClick={toCreateRehearsal}
+            >
+                Rehearsal
+            </Button>
         </div>
     </Card>
   );

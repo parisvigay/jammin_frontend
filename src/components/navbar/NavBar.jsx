@@ -22,8 +22,7 @@ export default function NavBar({loggedIn}) {
           </> 
       ) : (
         <>
-          <Link className={pathname === '/my-bands' || pathname === '/my-bands/create' || pathname === '/my-bands/:bandId' ? 'activeLink' : ''} id="link" style={{ textDecoration: 'none' }} to="/my-bands">My Bands</Link> 
-          <Link className={pathname === '/profile' ? 'activeLink' : ''} id="link" style={{ textDecoration: 'none' }} to="/profile">Profile</Link> 
+          <Link className={pathname === '/my-bands' || pathname === '/my-bands/create' || pathname === '/my-bands/:bandId' ? 'activeLink' : ''} id="link" style={{ textDecoration: 'none' }} to="/my-bands">My Bands</Link>
           <Link className={pathname === '/logout' ? 'activeLink' : ''} id="link" style={{ textDecoration: 'none' }} to="/logout">Log Out</Link>
         </>
       )}

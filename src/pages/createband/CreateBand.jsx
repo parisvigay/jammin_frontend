@@ -2,16 +2,20 @@ import './CreateBand.css'
 import Card from '@mui/joy/Card';
 import FormLabel from '@mui/joy/FormLabel';
 import Input from '@mui/joy/Input';
-import Select from '@mui/joy/Select';
-import Option from '@mui/joy/Option';
+import Checkbox from '@mui/joy/Checkbox';
 import Textarea from '@mui/joy/Textarea';
 import Button from '@mui/joy/Button';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
+import { jwtDecode } from "jwt-decode";
 
 export default function CreateBand() {
     const[disabled, setDisabled] = useState(true);
+
+    const[checked, setChecked] = useState(false);
+
+    const[userId, setUserId] = useState(0);
 
     const [bandName, setBandName] = useState('');
     const [bandDesc, setBandDesc] = useState('');
@@ -24,7 +28,21 @@ export default function CreateBand() {
     function toMyBands() {
         navigate('/my-bands')
     }
-
+    
+    useEffect(() => {
+        const getToken = () => {
+            return localStorage.getItem("access_token");
+    };
+        const token = getToken();
+        console.log(token);
+        if (token) {
+        const decodedToken = jwtDecode(token);
+        console.log(decodedToken);
+        const id = decodedToken['user_id']
+        console.log(id);
+        setUserId(id)
+        }
+    }, []);        
 
     function handleNameChange(e) {
         setBandName(e.target.value)
@@ -33,15 +51,35 @@ export default function CreateBand() {
     function handleDescChange(e) {
         setBandDesc(e.target.value)
     }
-
-    function handleMembersChange(e) {
-        setBandMembers(e.target.value)
-    }
-
+    
     function handleYearChange(e) {
         setBandYear(e.target.value)
     }
-    
+
+
+    useEffect(() => {
+        // Add the current user ID to bandMembers initially
+        setBandMembers([userId]);
+    }, [userId]);
+
+    function handleCheckboxChange(user) {
+        if (parseInt(user.id) === userId) {
+            // Prevent changing the currently logged-in user's checkbox
+            return;
+        }
+        const index = bandMembers.indexOf(user.id);
+
+        if (index === -1) {
+            // User not found in bandMembers, add to the list
+            setBandMembers([...bandMembers, user.id]);
+        } else {
+            // User found in bandMembers, remove from the list
+            const updatedMembers = [...bandMembers];
+            updatedMembers.splice(index, 1);
+            setBandMembers(updatedMembers);
+        }
+        console.log(bandMembers);
+    }
 
     useEffect(() => {
         if (bandName !== '' && bandDesc !== '' && bandYear !== '') {
@@ -56,17 +94,16 @@ export default function CreateBand() {
         async function fetchUsers() {
             try {
                 const response = await fetch('http://localhost:8000/users')
-                    const users = await response.json();
-                    // console.log(data.data);
-                    setUsersData(users);
-                    console.log(usersData);
+                    const allUsers = await response.json();
+
+                    setUsersData(allUsers)
+                    console.log(allUsers);
             } catch (error) {
                 console.error(error);
             }
         }
         fetchUsers();
     }, [])
-
 
     async function submitBand(e) {
         e.preventDefault();
@@ -76,10 +113,13 @@ export default function CreateBand() {
         if (!bandMembers.length) return
         if (bandYear === '') return
 
+        console.log('Band Members: ', bandMembers); 
+        const membersToSend = [...bandMembers];
+
         const body = {
             name: bandName,
             description: bandDesc,
-            // members: bandMembers,
+            members: membersToSend,
             year_formed: bandYear
         }
 
@@ -92,16 +132,20 @@ export default function CreateBand() {
                 body: JSON.stringify(body)
             })
             
-            const data = await response.json();
-            console.log(data);
+            if (response.ok) {
+                const data = await response.json();
+                console.log(data);
+            }
         }
         catch (error){
             console.error(error);
         }
         setBandName('')
         setBandDesc('')
-        setBandMembers([])
+        setBandMembers([userId]);
         setBandYear('')
+
+        toMyBands();
     }
 
   return (
@@ -132,13 +176,27 @@ export default function CreateBand() {
                     />
                 </div>
                 <div className="bandMembers">
-                    <FormLabel id="bandLabel">Members</FormLabel>
-                    <Select placeholder="Users" name="description" onChange={handleDescChange}>
-                        <Option>paz</Option>
-                        <Option>meg</Option>
-                        <Option>paris</Option>
-                    </Select>
+                    <FormLabel id="bandLabel">Users</FormLabel>
+                    <div className="membersScroll">
+                    {usersData && usersData.length > 0 && (
+                        usersData.map((user, index) => (
+                            <div key={index} className="userSelect">
+                                <p>{user.username}</p>
+                                <Checkbox 
+                                    id="checkbox" 
+                                    label="Member" 
+                                    variant="outlined" 
+                                    // checked={parseInt(user.id) === userId} 
+                                    checked={(bandMembers.includes(user.id) || parseInt(user.id) === userId)} 
+                                    onChange={() => handleCheckboxChange(user)}
+                                />
+                            </div>
+                        ))
+                    )}
+                    </div>
                 </div>
+
+
                 <div className="bandYear">
                     <FormLabel id="bandLabel">Year formed</FormLabel>
                     <Input 

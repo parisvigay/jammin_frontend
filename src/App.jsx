@@ -11,6 +11,9 @@ import pexels from '../src/assets/pexels.mp4'
 import Band from './pages/band/Band';
 import MyBands from './pages/mybands/MyBands';
 import CreateBand from './pages/createband/CreateBand';
+import Rehearsal from './pages/rehearsal/Rehearsal';
+import CreateRehearsal from './pages/createrehearsal/CreateRehearsal';
+import CreateSong from './pages/createsong/CreateSong';
 
  export default function App() {
   const location = useLocation();
@@ -33,7 +36,10 @@ import CreateBand from './pages/createband/CreateBand';
         <Route path="/logout" element={<Logout />} />
         <Route path="/my-bands" element={<MyBands />} />
         <Route path="/my-bands/:bandId" element={<Band />} />
+        <Route path="/my-bands/:bandId/rehearsal/:rehearsalId" element={<Rehearsal />} />
         <Route path="/my-bands/create" element={<CreateBand />} />
+        <Route path="/my-bands/:bandId/create-rehearsal" element={<CreateRehearsal />} />
+        <Route path="/my-bands/:bandId/create-song" element={<CreateSong />} />
       </Routes>
       <Footer />
   </main>

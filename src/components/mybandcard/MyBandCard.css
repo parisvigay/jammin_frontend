@@ -73,16 +73,6 @@
     font-size: 1.5vmin;
 }
 
-/* .songsAndRehearsalsContainer::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 8vmin;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
-} */
-
 #divider {
     color: #D8D8D8;
     width: 4vmin;
@@ -108,4 +98,28 @@
     font-family: Montserrat;
     margin: 0;
     width: 95%;
+}
+
+.btnContainer {
+    width: 60vmin;
+    height: 6vmin;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 1vmin;
+}
+
+#createSongOrRehearsal {
+    font-size: 1.25vmin;
+    font-family: Montserrat;
+    background-color: #302849;
+    height: 3vmin;
+    max-width: 13vmin;
+}
+
+#createSongOrRehearsal:hover {
+    background-color: #cfd7b6;
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
 }
