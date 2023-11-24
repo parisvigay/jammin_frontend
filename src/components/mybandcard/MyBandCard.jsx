@@ -109,7 +109,7 @@ export default function MyBandCard() {
                 <div className="songsOrRehearsalsContainer">
                 {bandSongs && bandSongs.map((song, index) => (
                     <div key={index}>
-                        <p className="songOrRehearsal">{song.title}</p>
+                        <Link style={{ textDecoration: 'none' }} to={`/my-bands/${bandId}/song/${song.id}`} className="songOrRehearsal">{song.title}</Link>
                         {index !== bandSongs.length - 1 && <Divider variant="middle" id="divider" />}
                     </div>
                 ))}

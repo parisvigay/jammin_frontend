@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap');
+
+.rehearsalMain {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vmin;
+}
+
+.rehearsalDate {
+    color: #302849;
+    font-family: Montserrat;
+}
+
+#rehearsalCard {
+    height: 72vmin;
+    width: 80vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 1vmin 1vmin #7a4747;
+    border: solid 0.25vmin #c7baaf;
+    padding: 0;
+}
+
+#rehearsalNotes {
+    width: 60vmin;
+    min-height: 5vmin;
+    max-height: 25vmin;
+    overflow-y: auto;
+}
+
+#rehearsalAttendees {
+    height: 4vmin;
+    width: 60vmin;
+    display: flex;
+    color: #302849;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat;
+    font-size: 1.5vmin;
+    padding: 0;
+}
+
+#rehearsalLocation {
+    height: 4vmin;
+    width: 60vmin;
+    display: flex;
+    color: #302849;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat;
+    font-size: 1.5vmin;
+    padding: 0;
+}
+
+.attendees {
+    color: #302849;
+    font-family: Montserrat;
+    font-size: 1.5vmin;
+}
+
+.location {
+    color: #302849;
+    font-family: Montserrat;
+    font-size: 1.5vmin;
+}
+
+.notes {
+    color: #302849;
+    font-family: Montserrat;
+    font-size: 1.5vmin;
+    min-height: 80%;
+}

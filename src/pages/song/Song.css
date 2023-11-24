@@ -1,0 +1,40 @@
+.songMain {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vmin;
+}
+
+#songCard {
+    height: 64vmin;
+    width: 80vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 1vmin 1vmin #7a4747;
+    border: solid 0.25vmin #c7baaf;
+    padding: 0;
+}
+
+.songTitle {
+    color: #302849;
+    font-family: Montserrat;
+}
+
+#songGenreOrDemoCard {
+    height: 4vmin;
+    width: 30vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.songGenreOrDemo {
+    margin: 0;
+    color: #302849;
+    font-family: Montserrat;
+}
