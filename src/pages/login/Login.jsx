@@ -49,7 +49,7 @@ export default function Login({ loggedIn, setLoggedIn}) {
         <form id="loginForm" onSubmit={submit}>
           <h3 id="signIn-h3">Sign in to your account</h3>
           <div id="loginName">
-            <FormLabel className="loginLabel">Username</FormLabel>
+            <FormLabel id="loginLabel">Username</FormLabel>
             <Input 
               className="loginInput"
               name="username"
@@ -59,13 +59,14 @@ export default function Login({ loggedIn, setLoggedIn}) {
             />
           </div>
           <div id="loginPassword">
-            <FormLabel className="loginLabel">Password</FormLabel>
+            <FormLabel id="loginLabel">Password</FormLabel>
             <Input 
               className="loginInput" 
               name="password"
               value={password}
               required
               onChange={(e) => setPassword(e.target.value)}
+              type="password"
             />
           </div>
           <Button type="submit" id="loginBtn">Log in</Button>

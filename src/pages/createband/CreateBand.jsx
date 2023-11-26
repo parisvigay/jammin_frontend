@@ -163,7 +163,7 @@ export default function CreateBand() {
                     onChange={handleNameChange}
                     value={bandName} 
                     />
-                    </div>
+                </div>
                 <div id="bandDescription">
                     <FormLabel id="bandLabel">Description</FormLabel>
                     <Textarea 

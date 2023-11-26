@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap');
 
 #myBandCard {
-    height: 64vmin;
+    height: 72vmin;
     width: 80vmin;
     margin-top: 10vmin;
     background-color: white;
@@ -111,14 +111,31 @@
 }
 
 #createSongOrRehearsal {
-    font-size: 1.25vmin;
+    font-size: 1.5vmin;
     font-family: Montserrat;
     background-color: #302849;
     height: 3vmin;
-    max-width: 13vmin;
+    max-width: 14vmin;
 }
 
 #createSongOrRehearsal:hover {
+    background-color: #cfd7b6;
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+#deleteBand {
+    position: absolute;
+    top: 1vmin;
+    right: 1vmin;
+    background-color: #302849;
+    font-size: 1.5vmin;
+    height: 3vmin;
+    max-width: 14vmin;
+    font-family: Montserrat;
+}
+
+#deleteBand:hover {
     background-color: #cfd7b6;
     transform: scale(1.05);
     transition: transform 0.2s ease;

@@ -63,7 +63,7 @@
     font-family: Montserrat;
     background-color: #302849;
     height: 3vmin;
-    width: 15vmin;
+    max-width: 12vmin;
     position: absolute;
     top: 1vmin;
     right: 1vmin;

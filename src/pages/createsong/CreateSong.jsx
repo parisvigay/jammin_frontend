@@ -4,6 +4,7 @@ import FormLabel from '@mui/joy/FormLabel';
 import Input from '@mui/joy/Input';
 import Button from '@mui/joy/Button';
 import Checkbox from '@mui/joy/Checkbox';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -72,7 +73,9 @@ export default function CreateSong() {
 
   return (
     <div className="createBandMain">
+
         <Card id="createBandCard">
+        <ArrowBackIcon id="toMyBands" onClick={toMyBand}/>
             <h3 id="createBandH3">Enter song details</h3>
             <form className="rehearsalForm">
                 <div id="songTitle">

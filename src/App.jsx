@@ -15,6 +15,7 @@ import Rehearsal from './pages/rehearsal/Rehearsal';
 import CreateRehearsal from './pages/createrehearsal/CreateRehearsal';
 import CreateSong from './pages/createsong/CreateSong';
 import Song from './pages/song/Song';
+import UpdateBand from './pages/updateband/UpdateBand';
 
  export default function App() {
   const location = useLocation();
@@ -42,6 +43,7 @@ import Song from './pages/song/Song';
         <Route path="/my-bands/create" element={<CreateBand />} />
         <Route path="/my-bands/:bandId/create-rehearsal" element={<CreateRehearsal />} />
         <Route path="/my-bands/:bandId/create-song" element={<CreateSong />} />
+        <Route path="/my-bands/:bandId/edit" element={<UpdateBand />} />
       </Routes>
       <Footer />
   </main>

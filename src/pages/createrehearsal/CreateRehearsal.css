@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .rehearsalForm {
-    height: 75%;
-    width: 60%;
+    height: 80%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

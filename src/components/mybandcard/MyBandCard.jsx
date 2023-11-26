@@ -88,9 +88,28 @@ export default function MyBandCard() {
         getBand();
 }, [bandId]);
 
+    async function deleteBand() {
+        try {
+            const response = await fetch(`http://localhost:8000/bands-detail/${bandId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                toMyBands();
+            }
+        }
+        catch (error){
+            console.error(error);
+        }      
+    }
+
   return (
     <Card id="myBandCard" variant="solid">
         <ArrowBackIcon id="toMyBands" onClick={toMyBands}/>
+        <Button id="deleteBand" onClick={deleteBand}>Delete Band</Button>
         <h3 id="bandName">{bandName}</h3>
         <h5 id="yearFormed">Est. {bandYear}</h5>
         <Card id="members">

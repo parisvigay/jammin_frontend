@@ -1,7 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap');
+
 #myBandMain {
     height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#editBand {
+    position: absolute;
+    top: 8.5vmin;
+    background-color: #302849;
+    font-size: 1.5vmin;
+    height: 3vmin;
+    max-width: 14vmin;
+    font-family: Montserrat;
+}
+
+#editBand:hover {
+    background-color: #cfd7b6;
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
 }

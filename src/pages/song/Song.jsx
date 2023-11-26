@@ -1,7 +1,8 @@
 import './Song.css'
 import { useState, useEffect } from 'react';
 import Card from "@mui/joy/Card";
-import { useParams } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export default function Song() {
 const [songData, setSongData]= useState();
@@ -10,6 +11,11 @@ const [songGenre, setSongGenre]= useState('');
 const [songDemo, setSongDemo]= useState(false);
 
 const { songId } = useParams();
+
+const navigate = useNavigate();
+function toMyBand() {
+    navigate(-1);
+}
 
 useEffect(() => {
 
@@ -40,6 +46,7 @@ useEffect(() => {
   return (
     <div className="songMain">
     <Card id="songCard">
+    <ArrowBackIcon id="toMyBands" onClick={toMyBand}/>
       <h3 className="songTitle">{songTitle}</h3>
       <Card id="songGenreOrDemoCard">
         <p className="songGenreOrDemo">{songGenre}</p>

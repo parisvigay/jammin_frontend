@@ -46,7 +46,7 @@ export default function MyBands() {
         <Card id="myBandsCard">
                 <h3 id="myBandsH3">My Bands</h3>
                 <Button id="createBandBtn" variant="solid" startDecorator={<Add />} onClick={toCreateBand}>
-                    New band
+                    Band
                 </Button>
             <div className="bandCardContainer">
                 {bands.map((band, index) => (

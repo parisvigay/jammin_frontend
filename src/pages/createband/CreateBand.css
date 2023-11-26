@@ -10,7 +10,7 @@
 }
 
 #createBandCard {
-    height: 64vmin;
+    height: 72vmin;
     width: 80vmin;
     margin-top: 10vmin;
     padding: 0;
@@ -25,7 +25,7 @@
 
 .bandForm {
     height: 75%;
-    width: 60%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

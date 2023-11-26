@@ -1,0 +1,21 @@
+.updateBandMain {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vmin;
+}
+
+#updateBandCard {
+    height: 72vmin;
+    width: 80vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 1vmin 1vmin #7a4747;
+    border: solid 0.25vmin #c7baaf;
+    padding: 0;
+}

@@ -1,7 +1,8 @@
 import './Rehearsal.css';
  import { useState, useEffect } from 'react';
 import Card from "@mui/joy/Card";
-import { useParams } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export default function Rehearsal() {
   const [rehearsalData, setRehearsalData]= useState();
@@ -12,7 +13,12 @@ export default function Rehearsal() {
   
   const { rehearsalId } = useParams();
 
-  useEffect(() => {
+  const navigate = useNavigate();
+  function toMyBand() {
+      navigate(-1);
+  }
+
+useEffect(() => {
 
 async function getRehearsal() {
   let rehearsal;
@@ -47,6 +53,7 @@ async function getRehearsal() {
   return (
     <div className="rehearsalMain">
       <Card id="rehearsalCard">
+      <ArrowBackIcon id="toMyBands" onClick={toMyBand}/>
         <h3 className="rehearsalDate">{rehearsalDate}</h3>
         <p className="attendees">Attendees</p>
         <Card id="rehearsalAttendees">
