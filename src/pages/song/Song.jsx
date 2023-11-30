@@ -43,7 +43,7 @@ useEffect(() => {
       }
       } 
     getSong();
-}, [songId]);
+}, [songId, songData]);
   return (
     <div className="songMain">
     <Card id="songCard">

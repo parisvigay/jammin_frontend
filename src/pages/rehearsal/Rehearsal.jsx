@@ -49,7 +49,7 @@ async function getRehearsal() {
   }
   } 
   getRehearsal();
-}, [rehearsalId]);
+}, [rehearsalId, rehearsalAttendees, rehearsalData]);
 
   return (
     <div className="rehearsalMain">
