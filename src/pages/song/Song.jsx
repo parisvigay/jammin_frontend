@@ -26,6 +26,7 @@ useEffect(() => {
             song = await response.json();
             setSongData(song)
             console.log(song);
+            console.log(songData);
         }
         catch (error){
             console.error(error);

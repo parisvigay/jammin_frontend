@@ -27,6 +27,7 @@ async function getRehearsal() {
         rehearsal = await response.json();
         setRehearsalData(rehearsal)
         console.log(rehearsal);
+        console.log(rehearsalData);
     }
     catch (error){
         console.error(error);

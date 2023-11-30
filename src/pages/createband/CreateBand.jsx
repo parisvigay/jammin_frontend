@@ -13,8 +13,6 @@ import { jwtDecode } from "jwt-decode";
 export default function CreateBand() {
     const[disabled, setDisabled] = useState(true);
 
-    const[checked, setChecked] = useState(false);
-
     const[userId, setUserId] = useState(0);
 
     const [bandName, setBandName] = useState('');

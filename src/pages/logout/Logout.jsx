@@ -18,6 +18,7 @@ export default function Logout() {
             localStorage.clear();
             axios.defaults.headers.common["Authorization"] = null;
             window.location.href = "/";
+            console.log(data);
           } catch (e) {
             console.log("logout not working", e);
           }
