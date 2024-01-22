@@ -5,8 +5,8 @@
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-    min-height: 6vmin;
-    max-height: 6vmin;
+    min-height: 10vmin;
+    max-height: 10vmin;
     background-color: #c7baaf;
 }
 
