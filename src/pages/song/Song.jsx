@@ -22,7 +22,7 @@ useEffect(() => {
     async function getSong() {
       let song;
         try {
-            const response = await fetch(`http://localhost:8000/songs-detail/${songId}`)
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/songs-detail/${songId}`)
             song = await response.json();
             setSongData(song)
             console.log(song);

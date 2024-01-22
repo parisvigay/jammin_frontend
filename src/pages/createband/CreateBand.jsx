@@ -91,7 +91,7 @@ export default function CreateBand() {
     useEffect(() => {
         async function fetchUsers() {
             try {
-                const response = await fetch('http://localhost:8000/users')
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/users`)
                     const allUsers = await response.json();
 
                     setUsersData(allUsers)
@@ -122,7 +122,7 @@ export default function CreateBand() {
         }
 
         try {
-            const response = await fetch('http://localhost:8000/bands/', {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/bands/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

@@ -28,7 +28,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('http://localhost:8000/register/', formData)
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/register/`, formData)
       navigate('/login')
     } catch (err) {
       console.error(err);

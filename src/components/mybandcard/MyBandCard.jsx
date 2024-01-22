@@ -38,7 +38,7 @@ export default function MyBandCard() {
         async function getBand() {
             let band;
             try {
-                const response = await fetch(`http://localhost:8000/bands-detail/${bandId}`)
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/bands-detail/${bandId}`)
                 band = await response.json();
             }
             catch (error){
@@ -62,7 +62,7 @@ export default function MyBandCard() {
         }
         async function getRehearsals() {
             try {
-                const response = await fetch(`http://localhost:8000/rehearsals?id=${bandId}`)
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/rehearsals?id=${bandId}`)
                 const rehearsals = await response.json();
                 setBandRehearsals(rehearsals)
                 console.log(rehearsals);
@@ -73,7 +73,7 @@ export default function MyBandCard() {
         }
         async function getSongs() {
             try {
-                const response = await fetch(`http://localhost:8000/songs?id=${bandId}`)
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/songs?id=${bandId}`)
                 const songs = await response.json();
                 setBandSongs(songs)
                 console.log(songs);
@@ -90,7 +90,7 @@ export default function MyBandCard() {
 
     async function deleteBand() {
         try {
-            const response = await fetch(`http://localhost:8000/bands-detail/${bandId}`, {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/bands-detail/${bandId}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'

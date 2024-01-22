@@ -23,7 +23,7 @@ useEffect(() => {
 async function getRehearsal() {
   let rehearsal;
     try {
-        const response = await fetch(`http://localhost:8000/rehearsals-detail/${rehearsalId}`)
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/rehearsals-detail/${rehearsalId}`)
         rehearsal = await response.json();
         setRehearsalData(rehearsal)
         console.log(rehearsal);

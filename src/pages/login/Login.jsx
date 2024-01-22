@@ -21,7 +21,7 @@ export default function Login({ loggedIn, setLoggedIn}) {
       password: password
     };
     // Create the POST request
-    const { data } = await axios.post('http://localhost:8000/token/', user,
+    const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/token/`, user,
     {
       headers: { "Content-Type": "application/json" },
     },

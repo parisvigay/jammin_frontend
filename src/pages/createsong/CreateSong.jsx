@@ -48,7 +48,7 @@ export default function CreateSong() {
     }
 
     try {
-        const response = await fetch('http://localhost:8000/songs/', {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/songs/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

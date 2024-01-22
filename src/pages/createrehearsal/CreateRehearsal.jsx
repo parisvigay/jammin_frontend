@@ -29,7 +29,7 @@ export default function CreateRehearsal() {
     async function getBand() {
         let band;
         try {
-            const response = await fetch(`http://localhost:8000/bands-detail/${bandId}`)
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/bands-detail/${bandId}`)
             band = await response.json();
         }
         catch (error){
@@ -83,7 +83,7 @@ export default function CreateRehearsal() {
         }
 
         try {
-            const response = await fetch('http://localhost:8000/rehearsals/', {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/rehearsals/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

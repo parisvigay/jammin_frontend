@@ -31,7 +31,7 @@ export default function UpdateBand() {
         async function getBand() {
             let band;
             try {
-                const response = await fetch(`http://localhost:8000/bands-detail/${bandId}`)
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/bands-detail/${bandId}`)
                 band = await response.json();
             }
             catch (error){
@@ -84,7 +84,7 @@ export default function UpdateBand() {
         }
 
         try {
-            const response = await fetch(`http://localhost:8000/bands-detail/${bandId}/`, {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/bands-detail/${bandId}/`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'

@@ -29,7 +29,7 @@ export default function MyBands() {
     // useEffect(() => {
         async function getBands() {
             try {
-                const response = await fetch(`http://localhost:8000/bands?id=${userId}`)
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/bands?id=${userId}`)
                 const bands = await response.json();
                 setBands(bands)
             }

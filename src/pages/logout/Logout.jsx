@@ -8,7 +8,7 @@ export default function Logout() {
         (async () => {
           try {
             const { data } = await axios.post(
-              'http://localhost:8000/logout/',
+              `${process.env.REACT_APP_BACKEND_URL}/logout/`,
               {
                 refresh_token: token,
               },
