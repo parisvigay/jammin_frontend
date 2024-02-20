@@ -26,17 +26,23 @@
 #logoLink {
     font-size: 4vmin;
     font-family: Anton;
-    color: white;
+    color: #302849;
+    border-bottom: .15vw solid transparent;
+    border-top: .15vw solid transparent
 }
 
 #link {
-    color: white;
-    font-size: 2vmin;
+    color: #302849;
+    font-size: 1.25vw;
+    font-weight: 900;
     font-family: Montserrat;
+    border-bottom: .15vw solid transparent;
+    border-top: .15vw solid transparent
 }
 
-#link.activeLink {
-    color: #302849;
+#link:hover {
+    border-bottom: .15vw solid #302849;
+    transition: ease .3s;
 }
 
 #copyright {
